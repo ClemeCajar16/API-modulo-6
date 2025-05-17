@@ -1,25 +1,21 @@
 // TODO: IMPORT MODULES
-const express = require('express'); // ? importamos express
-const morgan = require('morgan'); // ? importamos morgan
-const cors = require('cors'); // ? importamos cors
-const mongoose = require('mongoose'); // ? importamos mongoose
+import express from 'express';
+import mongoose from 'mongoose';
+import morgan from 'morgan';
+import cors from 'cors';
+import bodyParser from 'body-parser';
 
-const bodyParser = require('body-parser'); // ? importamos body-parser, un middleware para analizar el cuerpo de la peticion
+const app = express();
 
-
-const app = express(); // ?se usa la constante app para crear una instancia de express
-
-app.use(bodyParser.json());// ? analiza el cuerpo de la peticion y lo convierte a json
-
-
-
-
-
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+app.use(bodyParser.json());
+app.use("/servicios", servicios);
 
 const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT} 🤩`);
+  console.log(`Server is running on port ${PORT} 🤩`);
 });
+
+mongoose.connect("mongodb+srv://ccajarlaguna:ub2zlkdav1BcyYkF@apirest.pywmiwy.mongodb.net/?retryWrites=true&w=majority&appName=APIRest", {
+
+})
