@@ -2,11 +2,13 @@
 
 import express from 'express';  
 import mongoose from 'mongoose';
+import morgan from 'morgan';
+import cors from 'cors';
+import bodyParser from "body-parser";
 
 
 const app = express();
-const mongoose = mongoose()
-
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
