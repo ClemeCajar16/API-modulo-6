@@ -16,6 +16,13 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT} 🤩`);
 });
 
-mongoose.connect("mongodb+srv://ccajarlaguna:ub2zlkdav1BcyYkF@apirest.pywmiwy.mongodb.net/?retryWrites=true&w=majority&appName=APIRest", {
 
+//TODO: CONECTION TO MONGODB
+const DB = mongoose.connect("mongodb+srv://ccajarlaguna:ub2zlkdav1BcyYkF@apirest.pywmiwy.mongodb.net/?retryWrites=true&w=majority&appName=APIRest", {
+    userNewUrlParser: true,
+    useUnifiedTopology: true
 })
+
+DB.once("open", () => {
+    console.log("Database connected successfully");
+});
