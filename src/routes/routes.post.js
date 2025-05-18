@@ -24,4 +24,46 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+router.post('/', async (req, res) => {
+    const post = new Post({
+        nombre: req.body.nombre,
+        email: req.body.email,
+        telefono: req.body.telefono,
+        mensaje: req.body.mensaje
+    });
+    
+    try {
+        const savedPost = await post.save();
+        res.status(201).json(savedPost);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+});
+
+router.patch('/:id', async (req, res) => {
+  try {
+    const updatedPost = await Post.updateOne(
+      { _id: req.params.id },
+      {
+        $set: {
+          mensaje: req.body.mensaje,
+          telefono: req.body.telefono
+        }
+      }
+    );
+    res.status(200).json(updatedPost);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
+
+router.delete('/:id', async (req, res) => {
+    try {
+        const deletedPost = await Post.deleteOne({ _id: req.params.id });
+        res.status(200).json(deletedPost);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+})
+
 export default router;
