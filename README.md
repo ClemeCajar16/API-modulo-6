@@ -29,3 +29,11 @@ Este proyecto es una API REST sencilla que permite crear, leer, actualizar y eli
 | POST   | `/`    | Crear un nuevo post               |
 | PATCH  | `/:id` | Actualizar `mensaje` y `telefono` |
 | DELETE | `/:id` | Eliminar un post por ID           |
+
+
+##🧾 Esquema del documento
+{
+  nombre: String,   // Requerido
+  email: String,    // Requerido
+  telefono: Number, // Requerido
+  mensaje: String   // Requerido
