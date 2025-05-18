@@ -20,6 +20,7 @@ Este proyecto es una API REST sencilla que permite crear, leer, actualizar y eli
 
 
 
+## Endpoints 
 
 | Método | Ruta   | Descripción                       |
 | ------ | ------ | --------------------------------- |
