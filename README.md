@@ -14,10 +14,14 @@ Este proyecto es una API REST sencilla que permite crear, leer, actualizar y eli
 
 ## 📁 Estructura del proyecto
 
-- src/routes/routes.post.js → Rutas del API  
-- src/schemas/post.schema.js → Esquema Mongoose  
-- index.js o server.js → Archivo principal de configuración
-
+```
+📂 src/
+┣ 📂routes/
+┃ ┗ routes.post.js → Rutas del API
+┣ 📂schemas/
+┃ ┗ post.schema.js → Esquema Mongoose
+index.js / server.js → Configuración principal
+```
 
 
 ## Endpoints 
