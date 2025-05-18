@@ -19,5 +19,12 @@ Este proyecto es una API REST sencilla que permite crear, leer, actualizar y eli
 ┣ 📂schemas/
 ┃ ┗ post.schema.js → Esquema Mongoose
 index.js → Configuración principal
+---
 
-
+| Método | Ruta   | Descripción                       |
+| ------ | ------ | --------------------------------- |
+| GET    | `/`    | Obtener todos los posts           |
+| GET    | `/:id` | Obtener un post por ID            |
+| POST   | `/`    | Crear un nuevo post               |
+| PATCH  | `/:id` | Actualizar `mensaje` y `telefono` |
+| DELETE | `/:id` | Eliminar un post por ID           |
