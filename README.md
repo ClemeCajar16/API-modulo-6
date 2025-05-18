@@ -20,7 +20,7 @@ Este proyecto es una API REST sencilla que permite crear, leer, actualizar y eli
 ┃ ┗ routes.post.js → Rutas del API
 ┣ 📂schemas/
 ┃ ┗ post.schema.js → Esquema Mongoose
-index.js / server.js → Configuración principal
+index.js → Configuración principal
 ```
 
 
