@@ -32,8 +32,11 @@ Este proyecto es una API REST sencilla que permite crear, leer, actualizar y eli
 
 
 ##🧾 Esquema del documento
+
+marked:
 {
-  nombre: String,   // Requerido
-  email: String,    // Requerido
-  telefono: Number, // Requerido
-  mensaje: String   // Requerido
+  nombre: String, -> Requerido
+  email: String,  -> Requerido
+  telefono: Number, -> Requerido
+  mensaje: String -> Requerido
+}
