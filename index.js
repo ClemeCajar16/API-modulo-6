@@ -4,11 +4,13 @@ import mongoose from 'mongoose';
 import morgan from 'morgan';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+import postRoutes from './src/routes/routes.post.js';
+
 
 const app = express();
 
 app.use(bodyParser.json());
-app.use("/servicios", servicios);
+app.use("/servicios", postRoutes);
 
 const PORT = process.env.PORT || 3000;
 
@@ -18,11 +20,17 @@ app.listen(PORT, () => {
 
 
 //TODO: CONECTION TO MONGODB
-const DB = mongoose.connect("mongodb+srv://ccajarlaguna:ub2zlkdav1BcyYkF@apirest.pywmiwy.mongodb.net/?retryWrites=true&w=majority&appName=APIRest", {
-    userNewUrlParser: true,
-    useUnifiedTopology: true
+mongoose.connect("mongodb+srv://ccajarlaguna:ub2zlkdav1BcyYkF@apirest.pywmiwy.mongodb.net/?retryWrites=true&w=majority&appName=APIRest", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 })
-
-DB.once("open", () => {
-    console.log("Database connected successfully");
+.then(() => {
+  console.log("✅ Base de datos conectada exitosamente");
+})
+.catch((error) => {
+  console.error("❌ Error al conectar con la base de datos:", error);
+});
+ 
+app.get('/', (req, res) => {
+  res.send('Hello World!');
 });
