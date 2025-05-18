@@ -34,11 +34,8 @@ index.js → Configuración principal
 | PATCH  | `/:id` | Actualizar `mensaje` y `telefono` |
 | DELETE | `/:id` | Eliminar un post por ID           |
 
-
-
-##🧾 Esquema del documento
-
 ---
+## 📄 estructura del documento 
 ```
 {
   nombre: String, -> Requerido
