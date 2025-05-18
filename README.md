@@ -35,8 +35,10 @@ index.js → Configuración principal
 | DELETE | `/:id` | Eliminar un post por ID           |
 
 
+
 ##🧾 Esquema del documento
 
+---
 ```
 {
   nombre: String, -> Requerido
