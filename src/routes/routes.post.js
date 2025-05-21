@@ -1,10 +1,11 @@
-// routes/routes.port.js
+// !importaciones
 import { Router } from 'express';
-import { Post } from '../schemas/post.schema.js';
+import { Post } from '../schemas/schemas.post.js';
 
 const router = Router();
 
-// GET todos los posts
+          
+// ! GET todos los posts
 router.get('/', async (req, res) => {
   try {
     const post = await Post.find();
@@ -14,7 +15,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET un post por ID
+// ! GET un post por ID
 router.get('/:id', async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
@@ -23,6 +24,8 @@ router.get('/:id', async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+
+//! crear nuevo post
 
 router.post('/', async (req, res) => {
     const post = new Post({
@@ -40,6 +43,7 @@ router.post('/', async (req, res) => {
     }
 });
 
+// ! actualizar un post
 router.patch('/:id', async (req, res) => {
   try {
     const updatedPost = await Post.updateOne(
@@ -56,7 +60,7 @@ router.patch('/:id', async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 });
-
+ // ! eliminar un post
 router.delete('/:id', async (req, res) => {
     try {
         const deletedPost = await Post.deleteOne({ _id: req.params.id });

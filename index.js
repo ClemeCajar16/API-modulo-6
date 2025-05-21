@@ -1,16 +1,19 @@
-// TODO: IMPORT MODULES
+// TODO: IMPOTA MODULOS
 import express from 'express';
 import mongoose from 'mongoose';
 import morgan from 'morgan';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+import  path  from "path";
 import postRoutes from './src/routes/routes.post.js';
 
 
 const app = express();
-
 app.use(bodyParser.json());
 app.use("/servicios", postRoutes);
+
+
+
 
 const PORT = process.env.PORT || 3000;
 
@@ -19,7 +22,7 @@ app.listen(PORT, () => {
 });
 
 
-//TODO: CONECTION TO MONGODB
+//! CONECCION CON MONGODB
 mongoose.connect("mongodb+srv://ccajarlaguna:ub2zlkdav1BcyYkF@apirest.pywmiwy.mongodb.net/?retryWrites=true&w=majority&appName=APIRest", {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -31,6 +34,8 @@ mongoose.connect("mongodb+srv://ccajarlaguna:ub2zlkdav1BcyYkF@apirest.pywmiwy.mo
   console.error("❌ Error al conectar con la base de datos:", error);
 });
  
+
+//!RUTA GET EXPRESS
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
