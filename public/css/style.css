@@ -7,9 +7,14 @@
       font-family: sans-serif;
     }
 
+    
     header {
         background-color: #3a0ca3;
     
+    }
+
+    .text{
+        align-items: center;
     }
 
     .custom-card {
