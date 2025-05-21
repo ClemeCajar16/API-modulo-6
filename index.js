@@ -6,14 +6,20 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import  path  from "path";
 import postRoutes from './src/routes/routes.post.js';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const app = express();
 app.use(bodyParser.json());
 app.use("/servicios", postRoutes);
 
+app.use(express.static(path.join(__dirname, 'public')));
 
-
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 const PORT = process.env.PORT || 3000;
 
