@@ -41,7 +41,7 @@ mongoose.connect("mongodb+srv://ccajarlaguna:ub2zlkdav1BcyYkF@apirest.pywmiwy.mo
 });
  
 
-//!RUTA GET EXPRESS
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+// //!RUTA GET EXPRESS
+// app.get('/', (req, res) => {
+//   res.send('Hello World!');
+// });
